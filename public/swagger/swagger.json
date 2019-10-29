@@ -15,14 +15,14 @@
         "http"
     ],
     "paths": {
-        "/api/show": {
+        "/api/produc/list": {
             "get": {
                 "tags": [
                     "Projects"
                 ],
-                "summary": "Get project information",
-                "description": "Returns project data",
-                "operationId": "getProjectById",
+                "summary": "Get list product",
+                "description": "Returns product data",
+                "operationId": "getListProduct",
                 "responses": {
                     "200": {
                         "description": "OK"
@@ -38,14 +38,14 @@
                 ]
             }
         },
-        "/api/show/{id}": {
+        "/api/produc/list/{id}": {
             "get": {
                 "tags": [
                     "Projects"
                 ],
-                "summary": "Get project information",
-                "description": "Returns project data",
-                "operationId": "ApiV1GetUserById",
+                "summary": "Get product by id",
+                "description": "Returns product data",
+                "operationId": "getProductById",
                 "parameters": [
                     {
                         "name": "id",
@@ -76,8 +76,8 @@
                     "Projects"
                 ],
                 "summary": "Add a product",
-                "description": "",
-                "operationId": "placeOrder",
+                "description": "Returns product data",
+                "operationId": "createProduct",
                 "produces": "application/json",
                 "consumes": "multipart/form-data",
                 "parameters": [
@@ -115,7 +115,7 @@
                     "Projects"
                 ],
                 "summary": "Delete a product",
-                "description":"I like I delete",
+                "description":"Returns product data",
                 "operationId": "apiDeleteProduct",
                 "parameters":[{
                     "name": "id",
@@ -137,7 +137,7 @@
                 ],
                 "summary": "Update product",
                 "description":"Update product",
-                "operationId":"apiUpdateProduct",
+                "operationId":"updateProduct",
                 "parameters":[
                     {
                         "name":"id",

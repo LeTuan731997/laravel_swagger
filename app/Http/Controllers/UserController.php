@@ -25,7 +25,7 @@ class UserController extends Controller
         }
         return $userData['firstname'] . ' ' . $userData['lastname'];
     }
-     public function show(){
+     public function listProduct(){
         $getAllProducts = Products::all();
         $products = Products::paginate(10);
         return $getAllProducts;
