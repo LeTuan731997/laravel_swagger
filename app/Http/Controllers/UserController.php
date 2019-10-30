@@ -14,21 +14,15 @@ class UserController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response|string
      */
-    public function create(Request $request)
-    {
-        $userData = $request->only([
-            'firstname',
-            'lastname',
-        ]);
-        if (empty($userData['firstname']) && empty($userData['lastname'])) {
-            return new \Exception('Missing data', 404);
+
+     public function listProduct(Request $rq){
+        $per_page = $rq->input('per_page');
+        if($per_page){
+            $products = Products::paginate($per_page);
+        }else{
+            $products = Products::all();
         }
-        return $userData['firstname'] . ' ' . $userData['lastname'];
-    }
-     public function listProduct(){
-        $getAllProducts = Products::all();
-        $products = Products::paginate(10);
-        return $getAllProducts;
+        return $products;
     }
     public function getById($id){
         if(!Products::find($id)){

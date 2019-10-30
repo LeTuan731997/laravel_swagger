@@ -1,18 +1,18 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "Laravel and Swagger",
-        "description": "Getting started with Laravel and Swagger",
+        "title": "Project Product",
+        "description": "Getting started with Project Product",
         "termsOfService": "",
         "contact": {
-            "email": "name@example.com"
+            "email": "tuanlv2@vnext.com.vn"
         },
         "version": "1.0.0"
     },
     "host": "127.0.0.1:8000",
     "basePath": "/",
     "schemes": [
-        "http"
+        "http","https"
     ],
     "paths": {
         "/api/produc/list": {
@@ -23,6 +23,15 @@
                 "summary": "Get list product",
                 "description": "Returns product data",
                 "operationId": "getListProduct",
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Number record in a page ",
+                        "type": "integer",
+                        "minimum": "1"
+                    },
+                ],
                 "responses": {
                     "200": {
                         "description": "OK"
@@ -50,7 +59,7 @@
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "Id",
+                        "description": "Enter id",
                         "required": true,
                         "type": "integer"
                     }
